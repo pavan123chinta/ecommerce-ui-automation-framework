@@ -1,116 +1,162 @@
-E-Commerce UI Automation Framework
-Project Overview
+# E-Commerce UI Automation Framework
 
-This project is a Selenium + Pytest based UI Automation Framework built using Python and designed using the Page Object Model (POM) architecture.
+A Selenium and Pytest-based UI automation framework designed for scalable end-to-end web testing using the Page Object Model (POM) architecture.
 
-The framework automates an end-to-end E-Commerce flow including:
+## Overview
 
-Login validation
+This project automates a complete e-commerce workflow including:
 
-Product verification
+- Login validation
+- Product verification
+- Add-to-cart functionality
+- Checkout process
+- Failure screenshot capture
+- HTML report generation
 
-Add to cart functionality
+The framework demonstrates scalable automation design principles focused on maintainability, reusability, and clean project structure.
 
-Checkout process
+---
 
-Failure screenshot capture
+## Features
 
-HTML report generation
+### UI Automation
 
-It demonstrates real-world automation framework design principles focusing on scalability, maintainability, and clean structure.
+- Automated browser launch and teardown
+- Login validation with valid and invalid credentials
+- Product page verification
+- Add-to-cart functionality
+- End-to-end checkout workflow automation
 
-Tech Stack
+### Reporting
 
-Python
+- HTML report generation using `pytest-html`
+- Failure screenshot capture with timestamp-based naming
+- Independent test execution with fresh browser sessions
 
-Selenium WebDriver
+### Framework Design
 
-Pytest
+- Page Object Model (POM) architecture
+- Centralized WebDriver management
+- Reusable explicit wait utilities
+- Modular project structure
 
-WebDriver Manager
+---
 
-pytest-html
+## Tech Stack
 
-Page Object Model (POM)
+- Python
+- Selenium WebDriver
+- Pytest
+- WebDriver Manager
+- pytest-html
+- Page Object Model (POM)
 
-Framework Architecture
+---
+
+## Project Structure
+
+```bash
 ecommerce-ui-automation-framework/
 │
 ├── pages/              # Page Object classes
 ├── tests/              # Test cases
-├── utils/              # Driver factory & waits
+├── utils/              # Driver factory & wait utilities
 ├── screenshots/        # Failure screenshots
 ├── reports/            # HTML execution reports
 ├── conftest.py         # Pytest fixtures & hooks
 ├── requirements.txt    # Dependencies
 └── README.md
+```
 
-Key Design Principles
+---
 
-Page Object Model for separation of concerns
+## Installation
 
-Centralized WebDriver management
+### Clone Repository
 
-Reusable explicit wait utilities
-
-Independent test cases
-
-Automatic failure screenshot capture
-
-Self-contained HTML execution report
-
-Features Implemented
-
-✔ Automated browser launch & teardown
-✔ Login with valid and invalid credentials
-✔ Product page validation
-✔ Add to cart verification
-✔ Complete checkout flow automation
-✔ Screenshot capture on test failure
-✔ HTML report generation using pytest-html
-
-Sample Test Scenarios
-
-Validate successful login
-
-Validate error message on invalid login
-
-Verify products page loads after login
-
-Verify cart badge updates after adding product
-
-Complete end-to-end checkout flow
-
-How to Run the Project
-1️ Clone the repository
+```bash
 git clone https://github.com/pavan123chinta/ecommerce-ui-automation-framework.git
 cd ecommerce-ui-automation-framework
+```
 
-2️ Create virtual environment
+### Create Virtual Environment
+
+```bash
 python -m venv venv
 venv\Scripts\activate
+```
 
-3️ Install dependencies
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-4️ Execute tests with HTML report
+---
+
+## Run Tests
+
+### Execute Test Suite
+
+```bash
+pytest
+```
+
+### Generate HTML Report
+
+```bash
 pytest -v --html=reports/report.html --self-contained-html
+```
 
-Reporting
+---
 
-HTML report is generated inside /reports
+## Sample Test Scenarios
 
-Screenshots are automatically saved inside /screenshots on failure
+- Validate successful login
+- Validate error message for invalid login
+- Verify products page loads after login
+- Verify cart badge updates after adding product
+- Complete end-to-end checkout flow
 
-Each test runs independently with a fresh browser session
+---
 
-Screenshot Handling
+## Screenshot Handling
 
-Failure screenshots are captured using the pytest_runtest_makereport hook implemented in conftest.py.
+Failure screenshots are captured using the `pytest_runtest_makereport` hook implemented in `conftest.py`.
 
-This ensures automatic capture on failure with timestamp-based naming for easier debugging.
+Screenshots are automatically stored inside:
 
-Author
+```bash
+screenshots/
+```
 
-Pavan Chinta
+---
+
+## Reporting
+
+HTML reports are generated inside:
+
+```bash
+reports/
+```
+
+Each test execution creates a detailed report for easier debugging and execution tracking.
+
+---
+
+## Key Concepts Demonstrated
+
+- UI automation testing
+- Selenium WebDriver integration
+- Page Object Model implementation
+- Test scalability and reusability
+- Failure screenshot handling
+- Automated HTML reporting
+- Modular framework architecture
+
+---
+
+## Author
+
+**Pavan Chinta**  
 QA Automation Engineer | Selenium | Pytest | Python
